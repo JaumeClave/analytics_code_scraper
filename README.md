@@ -9,17 +9,17 @@ The main Python file for this project is called ```check_javascript.py``` found 
 You can run ```check_javascript.py``` from the terminal by providing the websites for which the scraper should check by using the ```--domains``` argument.
 The format passed must be "www.XYZ.com" (without the quotations). For instance:
 
-```python check_javascript.py --domains www.echobox.com``` 
+```python check_javascript.py --domains www.economist.com``` 
 
 A dictionary will be returned containing the URL of the scraped website and a boolean (True/False) value for its Google Analytics, Chartbeat and Facebook Pixel JavaScript request.
 
-```{'URL': 'www.echobox.com', 'Google Analytics': True, 'Chartbeat': False, 'Facebook Pixel': True}```
+```{'URL': 'www.economist.com', 'Google Analytics': True, 'Chartbeat': False, 'Facebook Pixel': False}```
 
-From this result one could infer that the www.echobox.com website has a Google Analytics tracking code, a Facebook Pixel tracking code and no Chartbeat tracking code. 
+From this result one could infer that the www.economist.com website has a Google Analytics tracking code and no Chartbeat tracking code or Facebook Pixel tracking code.
 
 From the terminal, it is also possible to provide several websites for the scraper to check. To do this, pass two or more websites after the ```--domains``` argument. For instance:
 
-```python check_javascript.py --domains www.echobox.com www.wikipedia.com```
+```python check_javascript.py --domains www.economist.com www.wikipedia.com```
 
 This will return one dictionary (as above) for each website.
 
@@ -30,8 +30,8 @@ The file may be imported as a module and used to return JavaScript requests of a
 ```python
 import check_javascript as cs 
 
-echobox_js = cs.check_website_for_analytics_javascript('www.echobox.com')
-print(echobox_js)
+economist_js = cs.check_website_for_analytics_javascript('www.economist.com')
+print(economist_js)
 
 skysports_js = cs.check_website_for_analytics_javascript('www.skysports.com')
 print(skysports_js)
