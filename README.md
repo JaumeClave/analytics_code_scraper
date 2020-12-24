@@ -1,4 +1,4 @@
-TEC-10586 Analytics Traffic Code Scraper
+Website Analytics Code Scraper
 ==============================
 
 Python code which searches for Google Analytics, Chartbeat and Facebook Pixel JavaScript requests on a website. This will help the user determine if a website has any of these codes without manually checking themselves.
